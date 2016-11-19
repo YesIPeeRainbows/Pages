@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: black;
+				background-image: url("bg.png");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+		</style>
+		<script>
+			function myFunction() {
+
+				//document.paragraph.innerHTML = "";
+
+				var prefix = ["Breeze", "Earth", "Hide", "River", "Wood", "Oak", "Spruce", "Birch", "Yellow", "Black", "White", "Down", "Up", "Big", "Little", "Water", "Metal", "Mane", "Grey", "Stone", "Bright", "Mellow","Angle","Anvil","Battle","Bear","Blue","Boom","Crow","Daisy","Dark","Dawn","Day","Death","Dragon","Drake","Thunder","Dune","Dusk","Earth","Emerald","Fairy","Fire","Foe","Frog","Frost","Ghost","Gian","Gold","Golden","Green","Griffin","Hawk","Hex","Ice","Iron","Jade","Legend","Life","Light","Lion","Lotus","Mist","Moon","Myth","Night","Ogre","Owl","Pearl","Pixie","Rain","Rainbow","Raven","Red","Rose","Ruby","Sand","Sea","Shadow","Silver","Skull","Sky","Soul","Sparkle","Spell","Spirit","Sprite","Star","Storm","Story","Strong","Summer","Sun","Swift","Tale","Thunder","Titan","Troll","Unicorn","Water","Wild","Willow","Wind","Winter","Wyrm"];
+				var suffix = ["Breeze", "Earth", "Sun", "Moon", "Iron", "Hide", "River", "Wood", "Hammer", "Sword", "Shield", "Beard", "Back", "Chest", "Wind", "Light", "Fire", "Water", "Metal", "Ice", "Thunder", "Mane", "Spear", "Lance", "Axe", "Stone", "Dark", "Bright", "Star", "Mist","","Bane","Blade","Blood","Bloom","Blossom","Brand","Breaker","Breath","Bringer","Caller","Caster","Catcher","Cloud","Haven","Crafter","Dreamer","Dust","Eyes","Finder","Fist","Flame","Flower","Forge","Fountain","Friend","Garden","Giver","Gem","Glade","Glass","Glen","Grove","Hand","Haven","Head","Heart","Horn","Hunter","Leaf","Mancer","Mask","Mender","Pants","Petal","Pyre","Rider","Runner","Shade","Shard","Shield","singer","Slinger","Smith","Song","Spear","Staff","Stalker","Steed","Strider","Tail","Talon","Tamer","Thief","Thistle","Thorn","Vault","Walker","Ward","Weave","Weaver","Whisper","Wielder","Welder","Wraith"];
+				var fPre = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig"];
+				var fSuf = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig","an","al","ad","ab","as","are","bo","ber","bis","ba","bu","ca","cas","ca","co","ce","car","ci","de","di","do","da","du","dy","del","dra","en","ea","eo","elm","ent","fa","fe","fo","fu","far","fez","flu","ga","ge","go","gu","gi","gir","grin","gore","hi","ha","hu","ho","he","hels","heat","hint","ing","io","ia","ie","iu","ire","irk","iron","isal","je","jo","ji","ja","ju","ka","ke","ki","ko","ku","kin","kar","kia","kio","lo","la","li","lu","le","lal","lyra","me","mo","ma","mira","may","na","ne","no","ni","nie","neli","nira","nera","orga","oa","ols","omp","pa","pe","pi","po","pron","preh","perk","pins","re","ra","ri","ro","rola","rigs","sa","so","se","si","sings","stra","to","ta","te","ti","tien","tora","tram","ual","uol","uro","uru","va","ve","vi","vo","viral","vosh","vent","wa","we","wo","wi","wank","wick","whel","wen","xe","xa","xi","xo","xu","xion","yi","ye","yo","ya","yarl","yahs","yelo","ze","za","zo","zi","zing","zick","ziff","","","","","","","","","","","","","","","","","",""];				
+				for(i=0;i<10;i++){
+
+					var pre = prefix[Math.floor(Math.random() * prefix.length)].toString();
+					var suf = suffix[Math.floor(Math.random() * suffix.length)].toString();
+					var fPref = fPre[Math.floor(Math.random() * fPre.length)].toString();
+					var fSuff = fSuf[Math.floor(Math.random() * fSuf.length)].toString();
+					var newPar = document.createElement('p');
+					var newText = document.createTextNode(fPref+fSuff.toLowerCase()+" "+pre+suf);
+					newPar.appendChild(newText);
+					document.getElementById("underlay").appendChild(newPar);
+					document.body.style.textAlign = "center";
+					document.body.style.fontSize = "xx-large";
+					document.body.style.color = "white";
+				}
+			//create a divider, an image, and an anchor
+				var div = document.createElement("div");
+				var img = document.createElement("img");
+				var a = document.createElement("a");
+
+			//assign necessary attributes
+				div.setAttribute("id", "myDiv");
+				img.setAttribute("src", "buttonHome.png");
+				img.setAttribute("width", "140");
+				img.setAttribute("height", "120");
+				a.setAttribute("href", "mobHome.html");
+				
+			//initialize the divider and then the image
+				document.getElementById("home").appendChild(div);
+				document.getElementById("myDiv").appendChild(img);
+			//create a var to snag the images within the divider (I think [0] determines the which image?)
+				var setImg = document.getElementById("myDiv").getElementsByTagName("img")[0];
+			//give this image to the anchor and finally load the anchor
+				a.appendChild(setImg);
+				document.getElementById("myDiv").appendChild(a);				
+			}
+		</script>
+	</head>
+
+	<body onload="myFunction()">
+	<table align="center" background="bgUnderlay.png">
+				<tr><td height = 100></td></tr>
+			<tr>
+				<td>
+					<img src="titleNames.png" width="500" height="120">
+					</br>
+					<img src="buttonRefresh.png" onClick="location.reload()" width="300" height="90">
+				</td>
+			</tr>
+			<tr><td id="underlay"></td></tr>
+			<tr><td height="136" width="1000"></td></tr>
+			<tr><td id="home"></td></tr>
+		</table>
+	</body>
+</html>
