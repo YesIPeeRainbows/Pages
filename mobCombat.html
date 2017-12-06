@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: black;
+				background-image: url("bg.png");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+		</style>
+		
+		<script>
+			function allCenter(){
+				document.body.style.textAlign = "center";
+				document.body.style.fontSize = "xx-large";
+				document.body.style.color = "white";
+			}
+		</script>
+	</head>
+	
+	<body onload="allCenter()">
+	<table align="center" background="bgUnderlay.png">
+			<tr>
+				<td>
+					<img src="titleCombat.png" width="500" height="120">
+					<h3>Combat Ability</h3>
+						<p>This determines your Intiative, your Accuracy and even Damage if you play it right.</p>
+						<p>Comabt Ability is equal to your Strength and your Dexterity.</p>
+					<h3>Initiative</h3>
+						<p>This determines when your turn is during battle and will change upon other battles.</p>
+						<p>Roll dice equal to your Combat Ability and compare with other party members to determine the order of operation.</p>
+					<h3>Typical Play</h3>
+						<p>During a player's turn they usually have a Simple Task and a Complex Task.</p>
+						<p>Simple Tasks include things like moveing and equip/dequip/requiping weapons.</p>
+						<p>Complex Tasks include things like attacking and using items.</p>
+						<p>Ask GM if you may perform certain actions you are unsure of.</p>
+					<h3>Target Accuracy</h3>
+						<p>Your target will have an unknown Target Accuracy, You must roll that number or over it to succesfuly land a hit.</p>
+						<p>Roll dice less than or equal to your Combat Ability.</p>
+						<p>If you don't roll the Target Accuracy or greater, your turn ends.</p>
+					<h3>Damage</h3>
+						<p>Check you weapon to see how many dice to roll.</p>
+						<p>If you didn't use all of your Combat Ability Dice, whatever is leftover maybe used to increase your damage.</p>
+						<p>The number rolled is the damage dealt to the enemy.</p>
+						<p>By your next turn you will have regenerated you Combat Ability.</p>
+					<h3>Myr Attacks</h3>
+						<p>Myr Attacks use Myr Ability Points rather than Combat Ability Points.</p>
+						<p>See <a href="mobMyr.html">Myr</a> for more information on Myr.</p>
+					<h3>Wild Die</h3>
+						<p>.:Accuracy:.</br>1 - instant miss. </br> 6 - instant hit.</p>
+						<p>.:Damage:.</br>1 - you take half your own damage rolled. </br> 6 - roll again adding the previous roll to the new roll.</p>
+					<table align="center">
+						<tr>
+							<td>
+								<a href="mobHome.html"> <img src="buttonHome.png" height="120" width="140"> </a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		
+		
+	</body>
+</html>

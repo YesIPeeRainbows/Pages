@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			body {
+				background-color: black;
+				background-image: url("bg.png");
+				background-repeat: no-repeat;
+				background-attachment: fixed;
+			}
+		</style>
+		<script>
+			function myFunction() {
+
+				//document.paragraph.innerHTML = "";
+
+				var fPre = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig"];
+				var fSuf = [""];				
+				var lPre = [""];
+				var lSuf = [""];
+				for(i=0;i<10;i++){
+
+					var pre = prefix[Math.floor(Math.random() * prefix.length)].toString();
+					var newPar = document.createElement('p');
+					var newText = document.createTextNode(name+" "+pre+suf);
+					newPar.appendChild(newText);
+					document.body.appendChild(newPar);
+					document.body.style.textAlign = "center";
+					document.body.style.fontSize = "xx-large";
+					document.body.style.color = "white";
+				}
+		
+			}
+		</script>
+	</head>
+
+	<body onload="myFunction()">
+	</body>
+</html>
