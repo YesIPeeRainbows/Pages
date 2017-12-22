@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+				body{background-image: url("webbg.png"); background-position: absolute;}
+				div.container{ width: 100%; border: 1px solid black;}
+				header, footer{padding: 1em; color: white; background-color: rgba(0, 0, 0, 0.6);}
+				nav{float: left; height: 582px; width: 115px; overflow: hidden; background-color: rgba(30, 30, 30, 0.8);}
+				article{text-align: left; height: 550px; border-left: 1px solid black; padding: 1em; overflow: hidden; background-color: rgba(160, 160, 160, 0.6);}
+				table{border-collapse: collapse;}
+				#tr:hover {background-color: rgba(120, 120, 120, 0.4);}
+				th, td{text-align: left; padding: 8px;}
+				td{padding: 8px}
+				a:link, a:visited {color: white; text-decoration: none; cursor: pointer;}
+		</style>
+		<script>
+			function myFunction() {
+
+				var prefix = ["Breeze", "River", "Wood", "Oak", "Stone", "Bright", "Dawn", "Day", "Dragon", "Drake", "Dune", "Dusk",  "Frost", "Griffin", "Hawk", "Mist", "Moon", "Night", "Rain", "Raven", "Rose", "Sand", "Sea", "Sky", "Storm", "Summer", "Thunder", "Willow", "Wind", "Winter", "Wyrm", "Crystal", "Skull", "Death", "Timber"];
+				var suffix = ["breeze", "wood", "wind", "bright", "mist", "bloom", "haven", " Garden", "glade", "glen", " Grove", "heart", "leaf", "pyre", "shade", "weave", "dale", "vale", " Plains", "guard", " Gate", " Cove", " Cave", " Plateau", " Canyon", " Island", " Lake", " Valley", " Mountain", " Forest", " Woods", " Ridge", "hold", "hearth", "fell", "fall", "breach", "heart", " Groto"];
+				var rows;
+				for(counter=0;counter<8;counter++){
+					rows = counter;
+					newTr = document.createElement("tr");
+					newTr.setAttribute("id", rows);
+					document.getElementById("generate").appendChild(newTr);
+
+					for(i=0;i<12;i++){
+
+						var pre = prefix[Math.floor(Math.random() * prefix.length)].toString();
+						var suf = suffix[Math.floor(Math.random() * suffix.length)].toString();
+						var newTd = document.createElement('td');
+						var newText = document.createTextNode(pre+suf);
+						newTd.appendChild(newText);
+						document.getElementById(rows.toString()).appendChild(newTd);
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body onload="myFunction()">
+		<div class="container">
+			<header>
+				<img src="title.png" height="50" width="250">
+			</header>
+			<nav>
+				<table width="2000">
+					<tr>
+						<td><a href="webHome.html"><img src="buttonHome.png" height="100" width="100"></a></td>
+					</tr>
+					<tr>
+						<td><a href="webName.html"><img src="buttonName.png" height="100" width="100"></a></td>
+					</tr>
+					<tr>
+						<td><a href="webLocations.html"><img src="buttonLocation.png" height="100" width="100"></a></td>
+					</tr>
+					<tr>
+						<td><a href="webHome.html"><img src="buttonItem.png" height="100" width="100"></a></td>
+					</tr>
+				</table>
+			</nav>
+			<article >
+				<table>
+				<tr>
+						<td>
+								<img src="titleLocations.png" width="300">
+						</td>
+				</tr>
+				</table>
+
+				<table id="generate" border="1" style="background-color: rgba(255, 255, 255, 0.5);" width="100%">
+				</table>
+			</article>
+		</div>
+
+	</body>
+</html>

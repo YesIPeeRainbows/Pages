@@ -4,13 +4,12 @@
 		<style>
 				body{background-image: url("webbg.png"); background-position: absolute;}
 				div.container{ width: 100%; border: 1px solid black;}
-				header, footer{padding: 1em; color: white; background-color: rgba(0, 0, 0, 0.9);}
-				nav{float: left; height: 582px; width: 160px; overflow: hidden; background-color: rgba(30, 30, 30, 0.8);}
+				header, footer{padding: 1em; color: white; background-color: rgba(0, 0, 0, 0.6);}
+				nav{float: left; height: 582px; width: 115px; overflow: hidden; background-color: rgba(30, 30, 30, 0.8);}
 				article{text-align: left; height: 550px; border-left: 1px solid black; padding: 1em; overflow: hidden; background-color: rgba(160, 160, 160, 0.6);}
 				table{border-collapse: collapse;}
+				#tr:hover {background-color: rgba(120, 120, 120, 0.4);}
 				th, td{text-align: left; padding: 8px;}
-				tr:nth-child(even){background-color: rgba(0, 0, 0, 0.3);}
-				tr.hvr:hover {background-color: rgba(120, 120, 120, 0.4);}
 				td{padding: 8px}
 				a:link, a:visited {color: white; text-decoration: none; cursor: pointer;}
 		</style>
@@ -20,15 +19,15 @@
 				var prefix = ["Breeze", "Earth", "Hide", "River", "Wood", "Oak", "Spruce", "Birch", "Yellow", "Black", "White", "Down", "Up", "Big", "Little", "Water", "Metal", "Mane", "Grey", "Stone", "Bright", "Mellow","Angle","Anvil","Battle","Bear","Blue","Boom","Crow","Daisy","Dark","Dawn","Day","Death","Dragon","Drake","Thunder","Dune","Dusk","Earth","Emerald","Fairy","Fire","Foe","Frog","Frost","Ghost","Gian","Gold","Golden","Green","Griffin","Hawk","Hex","Ice","Iron","Jade","Legend","Life","Light","Lion","Lotus","Mist","Moon","Myth","Night","Ogre","Owl","Pearl","Pixie","Rain","Rainbow","Raven","Red","Rose","Ruby","Sand","Sea","Shadow","Silver","Skull","Sky","Soul","Sparkle","Spell","Spirit","Sprite","Star","Storm","Story","Strong","Summer","Sun","Swift","Tale","Thunder","Titan","Troll","Unicorn","Water","Wild","Willow","Wind","Winter","Wyrm"];
 				var suffix = ["Breeze", "Earth", "Sun", "Moon", "Iron", "Hide", "River", "Wood", "Hammer", "Sword", "Shield", "Beard", "Back", "Chest", "Wind", "Light", "Fire", "Water", "Metal", "Ice", "Thunder", "Mane", "Spear", "Lance", "Axe", "Stone", "Dark", "Bright", "Star", "Mist","","Bane","Blade","Blood","Bloom","Blossom","Brand","Breaker","Breath","Bringer","Caller","Caster","Catcher","Cloud","Haven","Crafter","Dreamer","Dust","Eyes","Finder","Fist","Flame","Flower","Forge","Fountain","Friend","Garden","Giver","Gem","Glade","Glass","Glen","Grove","Hand","Haven","Head","Heart","Horn","Hunter","Leaf","Mancer","Mask","Mender","Pants","Petal","Pyre","Rider","Runner","Shade","Shard","Shield","singer","Slinger","Smith","Song","Spear","Staff","Stalker","Steed","Strider","Tail","Talon","Tamer","Thief","Thistle","Thorn","Vault","Walker","Ward","Weave","Weaver","Whisper","Wielder","Welder","Wraith"];
 				var fPre = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig"];
-				var fSuf = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig","an","al","ad","ab","as","are","bo","ber","bis","ba","bu","ca","cas","ca","co","ce","car","ci","de","di","do","da","du","dy","del","dra","en","ea","eo","elm","ent","fa","fe","fo","fu","far","fez","flu","ga","ge","go","gu","gi","gir","grin","gore","hi","ha","hu","ho","he","hels","heat","hint","ing","io","ia","ie","iu","ire","irk","iron","isal","je","jo","ji","ja","ju","ka","ke","ki","ko","ku","kin","kar","kia","kio","lo","la","li","lu","le","lal","lyra","me","mo","ma","mira","may","na","ne","no","ni","nie","neli","nira","nera","orga","oa","ols","omp","pa","pe","pi","po","pron","preh","perk","pins","re","ra","ri","ro","rola","rigs","sa","so","se","si","sings","stra","to","ta","te","ti","tien","tora","tram","ual","uol","uro","uru","va","ve","vi","vo","viral","vosh","vent","wa","we","wo","wi","wank","wick","whel","wen","xe","xa","xi","xo","xu","xion","yi","ye","yo","ya","yarl","yahs","yelo","ze","za","zo","zi","zing","zick","ziff","","","","","","","","","","","","","","","","","",""];				
+				var fSuf = ["Aar","Arc","Ali","And","Ash","Ank","Bel","Ben","Bas","Bir","Bri","Boh","Ban","Cal","Cri","Cra","Chi","Cor","Cul","Din","Dan","Don","Dul","Dek","Ent","Erg","Eva","Ela","Edo","Eso","Fal","Fel","Fen","Fir","Flo","Fra","Fer","Gal","Gen","Gra","Gro","Gin","Gon","Hen","Har","Hil","Hel","Hak","Hon","Her","Ima","Ing","Iro","Ilk","Isa","Iso","Jar","Jen","Joh","Jon","Jal","Jah","Jel","Kil","Kal","Kah","Kon","Kii","Klo","Kas","Lla","Lin","Lad","Lem","Lia","Lis","Lor","Man","Mac","Mar","Min","Mis","Mes","Mek","Nor","Nil","Nek","Nas","Ner","Opa","Ora","Ons","Ohk","Oli","Orc","Org","Pen","Pah","Pek","Pil","Pol","Poh","Qui","Qua","Que","Quo","Ren","Rin","Rah","Rom","Ral","Res","Ror","Ser","Sar","Sin","Sis","Sal","Sen","Sol","Tia","Tio","Tin","Ten","Tal","Tic","Toc","Tha","Umi","Uma","Ulo","Uhr","Ung","Vir","Van","Val","Von","Vas","Vin","Wil","Won","Wis","Was","Wel","Wic","Woc","Xav","Xor","Xal","Xir","Xen","Xio","Yir","Yen","Yal","Yow","Yor","Yac","Yin","Yar","Zin","Zan","Zen","Zim","Zor","Zal","Zig","an","al","ad","ab","as","are","bo","ber","bis","ba","bu","ca","cas","ca","co","ce","car","ci","de","di","do","da","du","dy","del","dra","en","ea","eo","elm","ent","fa","fe","fo","fu","far","fez","flu","ga","ge","go","gu","gi","gir","grin","gore","hi","ha","hu","ho","he","hels","heat","hint","ing","io","ia","ie","iu","ire","irk","iron","isal","je","jo","ji","ja","ju","ka","ke","ki","ko","ku","kin","kar","kia","kio","lo","la","li","lu","le","lal","lyra","me","mo","ma","mira","may","na","ne","no","ni","nie","neli","nira","nera","orga","oa","ols","omp","pa","pe","pi","po","pron","preh","perk","pins","re","ra","ri","ro","rola","rigs","sa","so","se","si","sings","stra","to","ta","te","ti","tien","tora","tram","ual","uol","uro","uru","va","ve","vi","vo","viral","vosh","vent","wa","we","wo","wi","wank","wick","whel","wen","xe","xa","xi","xo","xu","xion","yi","ye","yo","ya","yarl","yahs","yelo","ze","za","zo","zi","zing","zick","ziff","","","","","","","","","","","","","","","","","",""];
 				var rows;
-				for(counter=0;counter<7;counter++){
+				for(counter=0;counter<8;counter++){
 					rows = counter;
 					newTr = document.createElement("tr");
 					newTr.setAttribute("id", rows);
 					document.getElementById("generate").appendChild(newTr);
-					
-					for(i=0;i<10;i++){
+
+					for(i=0;i<12;i++){
 
 						var pre = prefix[Math.floor(Math.random() * prefix.length)].toString();
 						var suf = suffix[Math.floor(Math.random() * suffix.length)].toString();
@@ -43,7 +42,7 @@
 			}
 		</script>
 	</head>
-	
+
 	<body onload="myFunction()">
 		<div class="container">
 			<header>
@@ -51,44 +50,33 @@
 			</header>
 			<nav>
 				<table width="2000">
-					<tr class="hvr">
-						<td><p><font color="white"><a href="webHome.html">HOME</a></font></p></td>
+					<tr>
+						<td><a href="webHome.html"><img src="buttonHome.png" height="100" width="100"></a></td>
 					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="webGenerator.html">NAME GENERATOR</a></font></p></td>
+					<tr>
+						<td><a href="webName.html"><img src="buttonName.png" height="100" width="100"></a></td>
 					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="webMap.html">MAP</a></font></p></td>
+					<tr>
+						<td><a href="webLocations.html"><img src="buttonLocation.png" height="100" width="100"></a></td>
 					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="www.google.com">RACES</a></font></p></td>						
-					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="www.google.com">GETTING STARTED</a></font></p></td>
-					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="webMagic.html">MAGIC</a></font></p></td>
-					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="www.google.com">COMBAT</a></font></p></td>
-					</tr>
-					<tr class="hvr">
-						<td><p><font color="white"><a href="www.google.com">ABOUT</a></font></p></td>
+					<tr>
+						<td><a href="webHome.html"><img src="buttonItem.png" height="100" width="100"></a></td>
 					</tr>
 				</table>
 			</nav>
 			<article >
 				<table>
 				<tr>
-				<td><img src="titleNames.png" width="500" height="100" align="center"></td>
-				<td width="800"><a href=""><img src="buttonRegen.png" width="65" height="50" align="right"></a></td>
+						<td>
+								<img src="titleNames.png" width="300">
+						</td>
 				</tr>
 				</table>
-				
-				<table id="generate" border="1">
+
+				<table id="generate" border="1" style="background-color: rgba(255, 255, 255, 0.5);" width="100%">
 				</table>
 			</article>
 		</div>
-		
+
 	</body>
 </html>
